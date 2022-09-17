@@ -91,6 +91,20 @@ Everything 支持 http、etp/ftp 服务器，开启后你可以通过网络浏�
 
 浏览器输入本机 IP 可以直接搜索。
 ![everything-http服务器.png](../res/everything/everything-http服务器.png)
+### 实现原理
+为什么 Everything 搜索能这么快，当你 Windows 默认搜索还在转圈时，Everything 早已在你输入完关键字时，已完成搜索。
+
+以下是 Everything 作者在官方论坛的回答：[^2]
+
+> Everything scans the MFT directly, which limits Everything to NTFS volumes only.
+> 
+> Everything makes a very light copy of this mft and keeps it in memory, using the USN Change journal to monitor changes.
+> 
+> Searches are compiled into byte code and executed.
+
+大致意思就是 Everything 不是直接去扫描电脑上的文件，而是直接读取 NTFS 卷的 MTF(Master File Table)[^3] 数据表，这个表里存了当前磁盘所有文件信息，然后监听 USN 变更日志。USN 日志里记录了所有文件的变更记录[^4]，每当 USN 有变化，就重新更新文件数据。
+
+受限于此实现机制，Everything 只支持 NTFS 格式测磁盘，不支持 FAT32 等其他格式。
 
 ## 扩展阅读
 - [官方 支持文档 - voidtools](https://www.voidtools.com/zh-cn/support/everything/)
@@ -100,6 +114,10 @@ Everything 支持 http、etp/ftp 服务器，开启后你可以通过网络浏�
 - [官方 HTTP服务器 - voidtools](https://www.voidtools.com/zh-cn/support/everything/http/)
 
 ## 参考
-- [1]:["Everything" 索引全部文件需要多长时间？ - voidtools](https://www.voidtools.com/zh-cn/faq/#everything_%E7%B4%A2%E5%BC%95%E5%85%A8%E9%83%A8%E6%96%87%E4%BB%B6%E9%9C%80%E8%A6%81%E5%A4%9A%E9%95%BF%E6%97%B6%E9%97%B4%EF%BC%9F)
+- [^1]:["Everything" 索引全部文件需要多长时间？ - voidtools](https://www.voidtools.com/zh-cn/faq/#everything_%E7%B4%A2%E5%BC%95%E5%85%A8%E9%83%A8%E6%96%87%E4%BB%B6%E9%9C%80%E8%A6%81%E5%A4%9A%E9%95%BF%E6%97%B6%E9%97%B4%EF%BC%9F)
+- [^2]: [Technical questions about Everything - voidtools forum](https://www.voidtools.com/forum/viewtopic.php?f=2&t=2030)
+- [^3]:[Master File Table (Local File Systems) - Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/fileio/master-file-table)
+- [^4]:[USN Journal - Wikipedia](https://en.wikipedia.org/wiki/USN_Journal)
+
 
 
