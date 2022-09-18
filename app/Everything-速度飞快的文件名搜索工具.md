@@ -114,10 +114,8 @@ Everything 支持 http、etp/ftp 服务器，开启后你可以通过网络浏�
 - [官方 HTTP服务器 - voidtools](https://www.voidtools.com/zh-cn/support/everything/http/)
 
 ## 参考
-- [^1]:["Everything" 索引全部文件需要多长时间？ - voidtools](https://www.voidtools.com/zh-cn/faq/#everything_%E7%B4%A2%E5%BC%95%E5%85%A8%E9%83%A8%E6%96%87%E4%BB%B6%E9%9C%80%E8%A6%81%E5%A4%9A%E9%95%BF%E6%97%B6%E9%97%B4%EF%BC%9F)
-- [^2]: [Technical questions about Everything - voidtools forum](https://www.voidtools.com/forum/viewtopic.php?f=2&t=2030)
-- [^3]:[Master File Table (Local File Systems) - Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/fileio/master-file-table)
-- [^4]:[USN Journal - Wikipedia](https://en.wikipedia.org/wiki/USN_Journal)
-
-
+[^1]: ["Everything" 索引全部文件需要多长时间？ - voidtools](https://www.voidtools.com/zh-cn/faq/#everything_%E7%B4%A2%E5%BC%95%E5%85%A8%E9%83%A8%E6%96%87%E4%BB%B6%E9%9C%80%E8%A6%81%E5%A4%9A%E9%95%BF%E6%97%B6%E9%97%B4%EF%BC%9F)
+[^2]: [Technical questions about Everything - voidtools forum](https://www.voidtools.com/forum/viewtopic.php?f=2&t=2030)
+[^3]: [Master File Table (Local File Systems) - Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/fileio/master-file-table)
+[^4]:[USN Journal - Wikipedia](https://en.wikipedia.org/wiki/USN_Journal)
 
