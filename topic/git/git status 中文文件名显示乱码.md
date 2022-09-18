@@ -28,9 +28,9 @@ Untracked files:
 
 原因是 git 默认情况下会对字符编码大于 0x80 的进行 quote，如下是 [git 官网 quotePath 选项说明](https://git-scm.com/docs/git-config#Documentation/git-config.txt-corequotePath)
 
-> core.quotePath
+>core.quotePath
 > 
-	Commands that output paths (e.g. _ls-files_, _diff_), will quote "unusual" characters in the pathname by enclosing the pathname in double-quotes and escaping those characters with backslashes in the same way C escapes control characters (e.g. `\t` for TAB, `\n` for LF, `\\` for backslash) or bytes with values larger than 0x80 (e.g. octal `\302\265` for "micro" in UTF-8). If this variable is set to false, bytes higher than 0x80 are not considered "unusual" any more. Double-quotes, backslash and control characters are always escaped regardless of the setting of this variable. A simple space character is not considered "unusual". Many commands can output pathnames completely verbatim using the `-z` option. The default value is true.
+>Commands that output paths (e.g. _ls-files_, _diff_), will quote "unusual" characters in the pathname by enclosing the pathname in double-quotes and escaping those characters with backslashes in the same way C escapes control characters (e.g. `\t` for TAB, `\n` for LF, `\\` for backslash) or bytes with values larger than 0x80 (e.g. octal `\302\265` for "micro" in UTF-8). If this variable is set to false, bytes higher than 0x80 are not considered "unusual" any more. Double-quotes, backslash and control characters are always escaped regardless of the setting of this variable. A simple space character is not considered "unusual". Many commands can output pathnames completely verbatim using the `-z` option. The default value is true.
 
 `core.quotePath` 设置为 `false` 后，效果如下：
 ```bash
